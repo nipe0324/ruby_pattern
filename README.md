@@ -7,12 +7,10 @@ collection of ruby implementation pattern
 - interactor
 - memoization
 - object serializer & deserializer
-
+- presenter (decorator)
 
 ## Idea
 
-- presentation
-  - [draper](https://github.com/drapergem/draper)
 - http client
   - [octokit](https://github.com/octokit/octokit.rb)
   - [twtter](https://github.com/sferik/twitter)
