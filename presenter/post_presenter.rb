@@ -9,6 +9,8 @@ class PostPresenter < Presenter
     end
   end
 
+  private
+
   def published_at
     object.published_at.strftime("%A, %B %e")
   end

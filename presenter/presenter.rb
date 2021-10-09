@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 class Presenter
   # the object being decorated.
   attr_reader :object
@@ -11,5 +13,19 @@ class Presenter
 
   class << self
     alias :decorate :new
+  end
+
+  def method_missing(method, *args, &block)
+    return super unless delegatable?(method)
+
+    object.send(method, *args, &block)
+  end
+
+  private
+
+  def delegatable?(method)
+    return if private_methods(false).include?(method)
+
+    object.respond_to?(method)
   end
 end
